@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * This file is part of the West\\CodingStandard package
  *
  * (c) Chris Evans <cmevans@tutanota.com>
@@ -13,6 +13,13 @@ namespace West\CodingStandard\Sniffs\Classes;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
 
+/**
+ * Ensures that each class either implements an interface or extends another class.
+ *
+ * A third party class could legitimately be extended e.g. when adding a new exception type.
+ *
+ * @author Christopher Evans <cmevans@tutanota.com>
+ */
 class RequireInterfaceExtendSniff implements Sniff
 {
     /**

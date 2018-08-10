@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * This file is part of the West\\CodingStandard package
  *
  * (c) Chris Evans <cmevans@tutanota.com>
@@ -13,6 +13,15 @@ namespace West\CodingStandard\Sniffs\PHP;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
 
+/**
+ * Ensures static variables are not used.
+ *
+ * Any static function, member variable or global variable is disallowed; in the case
+ * "allowPrivate" is true (the default) private static class variables and functions
+ * are permitted.
+ *
+ * @author Christopher Evans <cmevans@tutanota.com>
+ */
 class NoStaticSniff implements Sniff
 {
     /**

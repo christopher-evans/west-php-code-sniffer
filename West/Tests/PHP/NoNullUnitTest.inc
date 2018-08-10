@@ -9,6 +9,11 @@ class X
     }
 }
 
+abstract class Y
+{
+    public abstract function  z   (  $z   = null);
+}
+
 $x = new X();
 $x->y($z);
 $x->y();

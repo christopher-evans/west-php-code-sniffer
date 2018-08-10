@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * This file is part of the West\\CodingStandard package
  *
  * (c) Chris Evans <cmevans@tutanota.com>
@@ -15,6 +15,9 @@ use PHP_CodeSniffer\Util\Standards;
 use PHP_CodeSniffer\Autoload;
 use PHPUnit\Framework\TestSuite;
 
+/**
+ * Test suite for the West coding standard.
+ */
 class AllTests
 {
     /**

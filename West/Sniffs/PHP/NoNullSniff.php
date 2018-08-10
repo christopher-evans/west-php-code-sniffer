@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * This file is part of the West\\CodingStandard package
  *
  * (c) Chris Evans <cmevans@tutanota.com>
@@ -13,6 +13,14 @@ namespace West\CodingStandard\Sniffs\PHP;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
 
+/**
+ * Ensures null is not used.
+ *
+ * Null is allowed as the default value for a function argument; this is for convenience
+ * to allow (to some degree) multiple signatures for a method.
+ *
+ * @author Christopher Evans <cmevans@tutanota.com>
+ */
 class NoNullSniff implements Sniff
 {
     /**
@@ -52,13 +60,7 @@ class NoNullSniff implements Sniff
             return;
         }
 
-
-        // determine if this is a default value for a function (ok)
-        // or an assignment (error)
-        $statementStart = $phpcsFile->findStartOfStatement($statementStart - 1);
-        $token = $tokens[$statementStart];
-
-        if ($token['type'] !== 'T_OPEN_PARENTHESIS') {
+        if (isset($tokens[$stackPtr]['nested_parenthesis']) === false) {
             // this isn't a default value
             // for a function
             $error = 'Use of null is forbidden';
@@ -68,21 +70,19 @@ class NoNullSniff implements Sniff
             return;
         }
 
-        // now either we can search forward to a function
-        // or the null is an error
-        $statementStart = $phpcsFile->findStartOfStatement($statementStart - 1);
-        $function = $phpcsFile->findNext(
-            T_FUNCTION,
-            $statementStart,
-            $stackPtr
-        );
+        // Check to see if this including statement is within the parenthesis
+        // of a function.
+        foreach ($tokens[$stackPtr]['nested_parenthesis'] as $left => $right) {
+            if (! isset($tokens[$left]['parenthesis_owner']) === true ||
+                $tokens[$tokens[$left]['parenthesis_owner']]['type'] !== 'T_FUNCTION') {
+                // this isn't a default value
+                // for a function
+                $error = 'Use of null is forbidden';
+                $phpcsFile->addError($error, $stackPtr, 'NullUsed');
+                $phpcsFile->recordMetric($stackPtr, 'No null members', 'no');
 
-        if ($function === false) {
-            $error = 'Use of null is forbidden';
-            $phpcsFile->addError($error, $stackPtr, 'NullUsed');
-            $phpcsFile->recordMetric($stackPtr, 'No null members', 'no');
-
-            return;
+                return;
+            }
         }
     }
 }

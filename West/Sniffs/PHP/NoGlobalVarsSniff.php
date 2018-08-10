@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * This file is part of the West\\CodingStandard package
  *
  * (c) Chris Evans <cmevans@tutanota.com>
@@ -13,6 +13,13 @@ namespace West\CodingStandard\Sniffs\PHP;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
 
+/**
+ * Ensures global variables are not used.
+ *
+ * Checks for the global keyword and for use of the $GLOBALS variable.
+ *
+ * @author Christopher Evans <cmevans@tutanota.com>
+ */
 class NoGlobalVarsSniff implements Sniff
 {
     /**

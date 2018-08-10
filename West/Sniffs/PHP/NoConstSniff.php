@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * This file is part of the West\\CodingStandard package
  *
  * (c) Chris Evans <cmevans@tutanota.com>
@@ -13,6 +13,14 @@ namespace West\CodingStandard\Sniffs\PHP;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
 
+/**
+ * Ensures that constants are not used.
+ *
+ * Checks for class constants and global constants.
+ * @TODO maybe allow private contants from PHP 7.2
+ *
+ * @author Christopher Evans <cmevans@tutanota.com>
+ */
 class NoConstSniff implements Sniff
 {
     /**

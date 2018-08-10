@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * This file is part of the West\\CodingStandard package
  *
  * (c) Chris Evans <cmevans@tutanota.com>
@@ -13,6 +13,11 @@ namespace West\CodingStandard\Sniffs\PHP;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
 
+/**
+ * Ensures switch statements are not used.
+ *
+ * @author Christopher Evans <cmevans@tutanota.com>
+ */
 class NoSwitchSniff implements Sniff
 {
     /**
@@ -28,8 +33,9 @@ class NoSwitchSniff implements Sniff
      */
     public function process(File $phpcsFile, $stackPtr)
     {
-        $error = 'Use of switch statements is forbidden';
+        $error = 'Use of switch statements is forbidden. Consider using objects instead.';
 
+        $phpcsFile->recordMetric($stackPtr, 'No switch', 'no');
         $phpcsFile->addError($error, $stackPtr, 'NotAllowed');
     }
 }

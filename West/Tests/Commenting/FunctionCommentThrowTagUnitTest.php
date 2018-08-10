@@ -8,14 +8,14 @@
  * file that was distributed with this source code.
  */
 
-namespace West\CodingStandard\Tests\PHP;
+namespace West\CodingStandard\Tests\Commenting;
 
 use PHP_CodeSniffer\Tests\Standards\AbstractSniffUnitTest;
 
 /**
- * Unit tests for West.PHP.NoStatic sniff.
+ * Unit tests for West.Commenting.FunctionCommentThrowTag sniff.
  */
-class NoStaticUnitTest extends AbstractSniffUnitTest
+class FunctionCommentThrowTagUnitTest extends AbstractSniffUnitTest
 {
     /**
      * {@inheritdoc}
@@ -23,13 +23,19 @@ class NoStaticUnitTest extends AbstractSniffUnitTest
     public function getErrorList()
     {
         return [
-            2 => 1,
-            6 => 1,
-            8 => 1,
-            10 => 1,
-            18 => 1,
-            20 => 1
+            9   => 1,
+            21  => 1,
+            35  => 1,
+            47  => 1,
+            61  => 2,
+            106 => 1,
+            123 => 1,
+            200 => 1,
+            219 => 1,
+            287 => 1,
+            397 => 1,
         ];
+
     }
 
     /**
@@ -38,5 +44,6 @@ class NoStaticUnitTest extends AbstractSniffUnitTest
     public function getWarningList()
     {
         return [];
+
     }
 }

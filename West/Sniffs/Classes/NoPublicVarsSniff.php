@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * This file is part of the West\\CodingStandard package
  *
  * (c) Chris Evans <cmevans@tutanota.com>
@@ -13,6 +13,11 @@ namespace West\CodingStandard\Sniffs\Classes;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
 
+/**
+ * Ensures that classes do not use public variables.
+ *
+ * @author Christopher Evans <cmevans@tutanota.com>
+ */
 class NoPublicVarsSniff implements Sniff
 {
     /**

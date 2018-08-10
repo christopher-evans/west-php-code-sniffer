@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * This file is part of the West\\CodingStandard package
  *
  * (c) Chris Evans <cmevans@tutanota.com>
@@ -12,6 +12,9 @@ namespace West\CodingStandard\Tests\PHP;
 
 use PHP_CodeSniffer\Tests\Standards\AbstractSniffUnitTest;
 
+/**
+ * Unit tests for West.PHP.NoNull sniff.
+ */
 class NoNullUnitTest extends AbstractSniffUnitTest
 {
     /**
@@ -21,7 +24,7 @@ class NoNullUnitTest extends AbstractSniffUnitTest
     {
         return [
             2 => 1,
-            15 => 1,
+            20 => 1,
         ];
     }
 

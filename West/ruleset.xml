@@ -30,7 +30,7 @@
 
     <!--  import from squiz  -->
     <rule ref="Squiz.Classes.ClassFileName"/>
-    <rule ref="Squiz.ControlStructures.ElseIfDeclaration"/>
+    <rule ref="Squiz.Commenting.DocCommentAlignment"/>
     <rule ref="Squiz.Operators.ValidLogicalOperators"/>
     <rule ref="Squiz.PHP.DiscouragedFunctions">
         <properties>

@@ -19,4 +19,19 @@ abstract class Z
 
     static protected abstract function y();
 }
+
+class X
+{
+    private static $t = 17;
+
+    private static function t()
+    {
+
+    }
+
+    final static private function s()
+    {
+
+    }
+}
 ?>
