@@ -31,8 +31,6 @@
     "test": [
       "@add-standard",
       "phpunit"
-    ],
-    "cs-check": "phpcs ./West",
-    "cs-fix": "phpcbf ./West"
+    ]
   }
 }

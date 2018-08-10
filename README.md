@@ -1,8 +1,6 @@
 # West PHP Coding Standard
 
-[//]: # ([![Build Status](https://travis-ci.org/christopher-evans/log.svg?branch=master)](https://travis-ci.org/christopher-evans/log))
-[//]: # ([![Maintainability](https://api.codeclimate.com/v1/badges/9709ef3f069c06f40e4c/maintainability)](https://codeclimate.com/github/christopher-evans/log/maintainability))
-
+[![Build Status](https://travis-ci.org/christopher-evans/west-php-code-sniffer.svg?branch=master)](https://travis-ci.org/christopher-evans/west-php-code-sniffer)
 
 ## Autoloading
 
