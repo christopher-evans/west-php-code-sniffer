@@ -47,19 +47,6 @@ class NoNullSniff implements Sniff
     {
         $tokens = $phpcsFile->getTokens();
 
-        $statementStart = $phpcsFile->findStartOfStatement($stackPtr);
-        $token = $tokens[$statementStart];
-
-        if ($token['type'] !== 'T_VARIABLE') {
-            // this isn't a default value
-            // for a function
-            $error = 'Use of null is forbidden';
-            $phpcsFile->addError($error, $stackPtr, 'NullUsed');
-            $phpcsFile->recordMetric($stackPtr, 'No null members', 'no');
-
-            return;
-        }
-
         if (isset($tokens[$stackPtr]['nested_parenthesis']) === false) {
             // this isn't a default value
             // for a function
@@ -73,8 +60,9 @@ class NoNullSniff implements Sniff
         // Check to see if this including statement is within the parenthesis
         // of a function.
         foreach ($tokens[$stackPtr]['nested_parenthesis'] as $left => $right) {
+            $allowedPlacement = ['T_FUNCTION', 'T_IF', 'T_ELSEIF'];
             if (! isset($tokens[$left]['parenthesis_owner']) === true ||
-                $tokens[$tokens[$left]['parenthesis_owner']]['type'] !== 'T_FUNCTION') {
+                ! in_array($tokens[$tokens[$left]['parenthesis_owner']]['type'], $allowedPlacement)) {
                 // this isn't a default value
                 // for a function
                 $error = 'Use of null is forbidden';

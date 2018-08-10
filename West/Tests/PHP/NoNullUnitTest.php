@@ -25,6 +25,7 @@ class NoNullUnitTest extends AbstractSniffUnitTest
         return [
             2 => 1,
             20 => 1,
+            34 => 1
         ];
     }
 
