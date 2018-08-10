@@ -1,0 +1,40 @@
+sudo: false
+
+language: php
+
+cache:
+  directories:
+  - $HOME/.composer/cache
+
+env:
+  global:
+  - COMPOSER_ARGS="--no-interaction --no-plugins"
+
+matrix:
+  include:
+  - php: 7.0
+    env:
+    - DEPS=locked
+    - TEST=true
+  - php: 7.1
+    env:
+    - DEPS=locked
+    - TEST=true
+  - php: 7.2
+    env:
+    - DEPS=locked
+    - TEST=true
+
+before_install:
+- phpenv config-rm xdebug.ini
+
+install:
+- travis_retry composer install $COMPOSER_ARGS --ignore-platform-reqs
+- if [[ $TEST == 'true' ]]; then travis_retry composer require --dev $COMPOSER_ARGS ; fi
+- stty cols 120 && composer show
+
+script:
+- if [[ $TEST == 'true' ]]; then composer test ; fi
+
+notifications:
+  email: false
