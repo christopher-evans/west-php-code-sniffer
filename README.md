@@ -1,4 +1,4 @@
-# West PHP Coding Standard
+# PHP Coding Standard
 
 [![Build Status](https://travis-ci.org/christopher-evans/west-php-code-sniffer.svg?branch=master)](https://travis-ci.org/christopher-evans/west-php-code-sniffer)
 
