@@ -2,7 +2,7 @@
 /**
  * This file is part of the West\\CodingStandard package
  *
- * (c) Chris Evans <cmevans@tutanota.com>
+ * (c) Chris Evans <cvns.github@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,7 +20,7 @@ use PHP_CodeSniffer\Files\File;
  * "allowPrivate" is true (the default) private static class variables and functions
  * are permitted.
  *
- * @author Christopher Evans <cmevans@tutanota.com>
+ * @author Christopher Evans <cvns.github@gmail.com>
  */
 class NoStaticSniff implements Sniff
 {

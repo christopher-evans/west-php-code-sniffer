@@ -2,7 +2,7 @@
 /**
  * This file is part of the West\\CodingStandard package
  *
- * (c) Chris Evans <cmevans@tutanota.com>
+ * (c) Chris Evans <cvns.github@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,7 +16,7 @@ use PHP_CodeSniffer\Files\File;
 /**
  * Ensures that classes do not use public variables.
  *
- * @author Christopher Evans <cmevans@tutanota.com>
+ * @author Christopher Evans <cvns.github@gmail.com>
  */
 class NoPublicVarsSniff implements Sniff
 {

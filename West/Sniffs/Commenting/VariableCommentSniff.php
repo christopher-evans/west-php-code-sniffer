@@ -2,7 +2,7 @@
 /**
  * This file is part of the West\\CodingStandard package
  *
- * (c) Chris Evans <cmevans@tutanota.com>
+ * (c) Chris Evans <cvns.github@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -27,7 +27,7 @@ use PHP_CodeSniffer\Util\Common;
  *
  * If the comment contains a single @inheritdoc tag and no other tags these rules will not be applied.
  *
- * @author Christopher Evans <cmevans@tutanota.com>
+ * @author Christopher Evans <cvns.github@gmail.com>
  */
 class VariableCommentSniff extends AbstractVariableSniff
 {

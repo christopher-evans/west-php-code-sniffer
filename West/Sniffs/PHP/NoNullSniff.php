@@ -2,7 +2,7 @@
 /**
  * This file is part of the West\\CodingStandard package
  *
- * (c) Chris Evans <cmevans@tutanota.com>
+ * (c) Chris Evans <cvns.github@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -19,7 +19,7 @@ use PHP_CodeSniffer\Files\File;
  * Null is allowed as the default value for a function argument; this is for convenience
  * to allow (to some degree) multiple signatures for a method.
  *
- * @author Christopher Evans <cmevans@tutanota.com>
+ * @author Christopher Evans <cvns.github@gmail.com>
  */
 class NoNullSniff implements Sniff
 {

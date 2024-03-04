@@ -2,7 +2,7 @@
 /**
  * This file is part of the West\\CodingStandard package
  *
- * (c) Chris Evans <cmevans@tutanota.com>
+ * (c) Chris Evans <cvns.github@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,7 +23,7 @@ use PHP_CodeSniffer\Util\Tokens;
  * - Empty comments are disallowed
  * - Must not be followed by a blank line
  *
- * @author Christopher Evans <cmevans@tutanota.com>
+ * @author Christopher Evans <cvns.github@gmail.com>
  */
 class InlineCommentSniff implements Sniff
 {
